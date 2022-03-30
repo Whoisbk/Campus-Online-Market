@@ -1,0 +1,21 @@
+{% extends 'base/main.html' %}
+
+{% block content %}
+
+    {% for v in vendors %}
+        <h1>{{ v.fname }}</h1>
+        <h3>{{ v.item_name }}</h3>
+        <h3>{{ v.item_price }}</h3>
+    {% endfor %}
+    {% if user.is_authenticated %}
+    <button type="submit"><a href="/profile">Profile</a</button>
+    <button type="submit"><a href="/signout">SignOut</a</button>
+    <button type="submit"><a href="/vendor">Become Vendor</a</button>
+    {% else %}
+    <h2>You have not logged in</h2>
+    <button type="submit"><a href="/signout">SignOut</a></button>
+    <button type="submit"><a href="/signin">Signin</a</button>
+    <button type="submit"> <a href="/register">Register</a></button>
+    {% endif %}
+
+{% endblock %}

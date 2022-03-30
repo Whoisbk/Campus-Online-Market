@@ -1,0 +1,33 @@
+{% extends 'base/main.html' %}
+
+{% block content %}
+<form  method="POST">
+    {% csrf_token %}
+     <label >Name</label>
+    <input
+     type="text" name="name" placeholder="Enter name" >
+     <br>
+     <label >Surname</label>
+    <input
+     type="text" name="surname" placeholder="Enter email" >
+     <br>
+    <label >Phone Number</label>
+    <input
+     type="tel" name="phone" placeholder="Enter Phone Number" >
+    <br> 
+    <label>Item Name</label>
+    <input type="text" name="item_name" placeholder="Enter Password">
+    <br>
+    <label>Item Img</label>
+    <input type="file" name="item_img">
+    <br>
+    <label>Item Price</label>
+    <input type="number" name="item_price" placeholder="Enter price">
+    <br>
+    <label>Item Type</label>
+    <input type="text" name="item_type" placeholder="Enter Type">
+    <br>
+     <button type="submit">Login</button>
+
+</form>
+{% endblock %}

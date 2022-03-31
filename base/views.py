@@ -48,6 +48,8 @@ def register(request):
     return render(request,"base/register.html")
 def vendor(request):
     if request.method == "POST":
+        fname = request.POST["name"]
+        sname = request.POST["surname"]
         phone_num = request.POST["phone"]
         item_name = request.POST["item_name"]
         item_img = request.POST["item_img"]

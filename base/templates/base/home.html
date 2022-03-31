@@ -5,7 +5,9 @@
     {% for v in vendors %}
         <h1>{{ v.fname }}</h1>
         <h3>{{ v.item_name }}</h3>
-        <h3>{{ v.item_price }}</h3>
+        {% if v.item_img %}
+        <img src="{{ v.item_img.url }}"></img>
+        {% endif %}
     {% endfor %}
     {% if user.is_authenticated %}
     <button type="submit"><a href="/profile">Profile</a</button>
